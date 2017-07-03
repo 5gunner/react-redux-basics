@@ -5,7 +5,7 @@ import { Router, Route } from "react-router";
 import createHistory from 'history/createBrowserHistory'
 import { syncHistoryWithStore } from "react-router-redux";
 import Classes from "./classes/Classes";
-import store from "./store";
+import store from "./store/store";
 
 const newHistory = createHistory();
 const history = syncHistoryWithStore(newHistory, store);
