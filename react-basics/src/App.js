@@ -1,32 +1,37 @@
 import React, { Component } from 'react';
-import Projects from './components/projects';
+import Home from './components/Home';
+import Header from './components/Header';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { User } from './components/User';
+import Geosuggest from 'react-geosuggest';
 
 class App extends Component {
+  let something: number;
   constructor() {
     super();
     this.state = {
-      projects: [
-        {
-          title: 'Business Website',
-          category: 'Web Design'
-        },
-        {
-          title: 'Social App',
-          category: 'Mobile Development'
-        },
-        {
-          title: 'Ecommerce Shopping Cart',
-          category: 'Web Development'
-        }
-      ]
+      title: 'Home'
     }
   }
+
+  titleChange(newTitle) {
+    this.setState({
+      title: newTitle
+    })
+  }
+
+  logLocation(suggestion) {
+    console.log(suggestion);
+  }
+
   render() {
     return (
-      <div className="App">
-        My App
-        <Projects test="Hello World!" projects={this.state.projects} />
-      </div>
+        <Router>
+         <div>
+            <Header />
+            <Route path="/user" component={User}></Route>
+         </div>
+        </Router>
     );
   }
 }
