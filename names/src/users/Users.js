@@ -12,6 +12,10 @@ class Users extends Component {
     };
   }
 
+  componentDidMount() {
+    console.log(this.props.users);
+  }
+
   listUsers() {
     return this.props.users.map((user, i) => {
       return (
