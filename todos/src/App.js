@@ -1,34 +1,27 @@
 import React, { Component } from "react";
-import logo from "./clipboard.svg";
-import "./App.sass";
-import { connect } from "react-redux";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import List from "./containers/list";
+import AddItem from "./containers/addItem";
+import Nav from "./components/nav";
+import Header from "./components/header";
+
+import "./App.css";
 
 class App extends Component {
-  componentDidMount() {
-    console.log(this.props.todos);
-  }
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>SIMPLE <br/>TODOS</h2>
+      <Router>
+        <div className="App col-md-4 col-md-offset-4">
+          <Header />
+          <Nav />
+          <Route path="/addItem" component={AddItem} />
+          <Route path="/" component={List} />
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <List todos={this.props.todos}/>
-      </div>
+      </Router>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    todos: state.todos
-  };
-}
-
-export default connect(mapStateToProps)(App);
+export default App;

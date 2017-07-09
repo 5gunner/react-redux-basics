@@ -1,0 +1,125 @@
+body,
+html {
+    font-size: 18px;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    outline: 0
+}
+
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 80px;
+}
+
+.App-header {
+    background-color: #303F9F;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: white;
+}
+
+.App-header h2 {
+    font-weight: bold;
+    text-align: left
+}
+
+.App-header h2 small{
+    color: white;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+.todoList label {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.todoList li{
+    position: relative;
+}
+
+.todoList label input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 0;
+}
+
+.todoList label input[type="checkbox"]:checked {
+    text-decoration: line-through;
+}
+
+nav#navigation ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style: none;
+}
+
+nav#navigation ul li {
+    flex-grow: 1;
+}
+
+nav#navigation .navlinks {
+    display: block;
+    padding: .5rem 0;
+    width: 100%;
+    font-size: .79rem;
+    letter-spacing: .07rem;
+    background: #C5CAE9;
+    color: white;
+}
+
+nav#navigation .navlinks.active{
+    background: #448AFF;
+}
+
+.form-control{
+    border-radius: 0;
+    box-shadow: none;
+    height: auto;
+}
+
+form#addNew{
+    margin: 1rem 0;
+}
+
+form#addNew input{
+    padding: .5rem .8rem;
+    border: 2px solid #448AFF;
+}
+
+form#addNew input::-webkit-input-placeholder{
+    color: #C5CAE9;
+}
+
+button#dropdown{
+    padding: 9px 12px 8px;
+    border-radius: 0
+}
+
+div.dropdown{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%
+}
+
+ul.dropdown-menu{
+    right: 0;
+    left: auto;
+}
+
+.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default{
+    background-color: #C5CAE9;
+}
